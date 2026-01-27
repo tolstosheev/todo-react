@@ -1,21 +1,14 @@
+import Field from "./Field";
+
 const SearchTaskForm = () => {
     return (
         <form className="todo__form">
-            <div className="todo__field field">
-                <label
-                    className="field__label"
-                    htmlFor="search-task"
-                >
-                    Search task
-                </label>
-                <input
-                    className="field__input"
-                    id="search-task"
-                    placeholder=" "
-                    autoComplete="off"
-                    type="search"
-                />
-            </div>
+            <Field
+                id='search-task'
+                label='Search task'
+                className='todo__field'
+                type='search'
+            />
         </form>
     )
 }
