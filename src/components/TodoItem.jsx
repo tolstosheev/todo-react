@@ -4,6 +4,8 @@ const TodoItem = (props) => {
         id,
         title,
         isDone,
+        onDeleteTaskButtonClick,
+        onTaskCompleteChange,
     } = props;
     return (
         <li
@@ -14,7 +16,9 @@ const TodoItem = (props) => {
                 id={id}
                 type="checkbox"
                 checked={isDone}
-                readOnly
+                onChange={({target}) => {
+                    onTaskCompleteChange(id, target.checked)}
+                }
             />
             <label
                 className="todo-item__label"
@@ -23,6 +27,7 @@ const TodoItem = (props) => {
                 {title}
             </label>
             <button
+                onClick={() => onDeleteTaskButtonClick(id)}
                 className="todo-item__delete-button"
                 aria-label="Delete"
                 title="Delete"
