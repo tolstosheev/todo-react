@@ -6,10 +6,12 @@ const TodoItem = (props) => {
         isDone,
         onDeleteTaskButtonClick,
         onTaskCompleteChange,
+        ref,
     } = props;
     return (
         <li
             className={`todo-item ${className}`}
+            ref={ref}
         >
             <input
                 className="todo-item__checkbox"
